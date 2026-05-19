@@ -6,7 +6,7 @@ Drop-in device activation + license UI for Tauri 2 apps shipped through [getapps
 - Shared OS keychain entry so multiple apps on the same machine **reuse one license slot**.
 - 1-day grace period for fresh installs: user can use the app immediately; sign-in is enforced after the grace window.
 - Floating sign-in button (bottom-right) while in grace; full-screen overlay once locked.
-- Automatic `whoami` re-check every 5 min — handles "license moved to another device" and "subscription lapsed" without any code in the host app.
+- Automatic `whoami` re-check every 30 min — handles "license moved to another device" and "subscription lapsed" without any code in the host app.
 
 > Backend reference (server-side activation routes, web account UI, billing): see the [getapps.cafe repo](https://github.com/mrleepng/getappscafe).
 
@@ -106,7 +106,7 @@ After activating app A, install app B from the same publisher — it reads the s
 | `graceMs` | `86400000` (24h) | How long after first boot the app stays usable without sign-in. |
 | `pollIntervalMs` | `2500` | Activation poll cadence. |
 | `pollTimeoutMs` | `600000` (10m) | Give up on the activation request after this. |
-| `whoamiInterval` | `300000` (5m) | Periodic license re-check after sign-in. |
+| `whoamiInterval` | `1800000` (30m) | Periodic license re-check after sign-in. |
 | `mountUi` | `true` | Set to `false` if you want to render your own UI and just consume `state`. |
 | `onChange(state)` | — | Callback on every state change. |
 | `upgradeUrl` | derived | Where the "Upgrade" button opens. Defaults to `${apiUrl}/account#/billing`. |

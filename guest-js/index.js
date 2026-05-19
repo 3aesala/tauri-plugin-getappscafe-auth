@@ -29,7 +29,7 @@ const DEFAULT_OPTS = {
   graceMs: 24 * 60 * 60 * 1000,
   pollIntervalMs: 2500,
   pollTimeoutMs: 10 * 60 * 1000,
-  whoamiInterval: 5 * 60 * 1000, // re-check license every 5 minutes
+  whoamiInterval: 30 * 60 * 1000, // re-check license every 30 minutes
   mountUi: true,
   onChange: null,
   upgradeUrl: null, // falls back to license.upgrade_url from server
