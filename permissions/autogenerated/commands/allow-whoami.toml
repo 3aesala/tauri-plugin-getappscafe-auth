@@ -1,6 +1,0 @@
-"$schema" = "../../schemas/schema.json"
-
-[[permission]]
-identifier = "allow-whoami"
-description = "Allows the whoami command without prearguments."
-commands.allow = ["whoami"]

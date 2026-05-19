@@ -295,126 +295,6 @@
       "type": "string",
       "oneOf": [
         {
-          "description": "Allows the get_grace_state command without prearguments.",
-          "type": "string",
-          "const": "allow-get_grace_state",
-          "markdownDescription": "Allows the get_grace_state command without prearguments."
-        },
-        {
-          "description": "Allows the get_hardware_id command without prearguments.",
-          "type": "string",
-          "const": "allow-get_hardware_id",
-          "markdownDescription": "Allows the get_hardware_id command without prearguments."
-        },
-        {
-          "description": "Allows the get_platform_info command without prearguments.",
-          "type": "string",
-          "const": "allow-get_platform_info",
-          "markdownDescription": "Allows the get_platform_info command without prearguments."
-        },
-        {
-          "description": "Allows the init_activation command without prearguments.",
-          "type": "string",
-          "const": "allow-init_activation",
-          "markdownDescription": "Allows the init_activation command without prearguments."
-        },
-        {
-          "description": "Allows the open_activation_url command without prearguments.",
-          "type": "string",
-          "const": "allow-open_activation_url",
-          "markdownDescription": "Allows the open_activation_url command without prearguments."
-        },
-        {
-          "description": "Allows the poll_activation command without prearguments.",
-          "type": "string",
-          "const": "allow-poll_activation",
-          "markdownDescription": "Allows the poll_activation command without prearguments."
-        },
-        {
-          "description": "Allows the shared_token_get command without prearguments.",
-          "type": "string",
-          "const": "allow-shared_token_get",
-          "markdownDescription": "Allows the shared_token_get command without prearguments."
-        },
-        {
-          "description": "Allows the shared_token_remove command without prearguments.",
-          "type": "string",
-          "const": "allow-shared_token_remove",
-          "markdownDescription": "Allows the shared_token_remove command without prearguments."
-        },
-        {
-          "description": "Allows the shared_token_set command without prearguments.",
-          "type": "string",
-          "const": "allow-shared_token_set",
-          "markdownDescription": "Allows the shared_token_set command without prearguments."
-        },
-        {
-          "description": "Allows the whoami command without prearguments.",
-          "type": "string",
-          "const": "allow-whoami",
-          "markdownDescription": "Allows the whoami command without prearguments."
-        },
-        {
-          "description": "Denies the get_grace_state command without prearguments.",
-          "type": "string",
-          "const": "deny-get_grace_state",
-          "markdownDescription": "Denies the get_grace_state command without prearguments."
-        },
-        {
-          "description": "Denies the get_hardware_id command without prearguments.",
-          "type": "string",
-          "const": "deny-get_hardware_id",
-          "markdownDescription": "Denies the get_hardware_id command without prearguments."
-        },
-        {
-          "description": "Denies the get_platform_info command without prearguments.",
-          "type": "string",
-          "const": "deny-get_platform_info",
-          "markdownDescription": "Denies the get_platform_info command without prearguments."
-        },
-        {
-          "description": "Denies the init_activation command without prearguments.",
-          "type": "string",
-          "const": "deny-init_activation",
-          "markdownDescription": "Denies the init_activation command without prearguments."
-        },
-        {
-          "description": "Denies the open_activation_url command without prearguments.",
-          "type": "string",
-          "const": "deny-open_activation_url",
-          "markdownDescription": "Denies the open_activation_url command without prearguments."
-        },
-        {
-          "description": "Denies the poll_activation command without prearguments.",
-          "type": "string",
-          "const": "deny-poll_activation",
-          "markdownDescription": "Denies the poll_activation command without prearguments."
-        },
-        {
-          "description": "Denies the shared_token_get command without prearguments.",
-          "type": "string",
-          "const": "deny-shared_token_get",
-          "markdownDescription": "Denies the shared_token_get command without prearguments."
-        },
-        {
-          "description": "Denies the shared_token_remove command without prearguments.",
-          "type": "string",
-          "const": "deny-shared_token_remove",
-          "markdownDescription": "Denies the shared_token_remove command without prearguments."
-        },
-        {
-          "description": "Denies the shared_token_set command without prearguments.",
-          "type": "string",
-          "const": "deny-shared_token_set",
-          "markdownDescription": "Denies the shared_token_set command without prearguments."
-        },
-        {
-          "description": "Denies the whoami command without prearguments.",
-          "type": "string",
-          "const": "deny-whoami",
-          "markdownDescription": "Denies the whoami command without prearguments."
-        },
-        {
           "description": "Enables the get_grace_state command without any pre-configured scope.",
           "type": "string",
           "const": "allow-get-grace-state",
@@ -535,10 +415,10 @@
           "markdownDescription": "Denies the whoami command without any pre-configured scope."
         },
         {
-          "description": "Allows the full getapps.cafe activation flow:\n- read hardware id / platform info\n- start an activation and poll for its completion\n- call /whoami with a bearer token\n- read/write/remove the shared device token in the OS keychain\n- read or initialize the grace-period state\n- open the activation URL in the user's default browser\n\n#### This default permission set includes:\n\n- `allow-get_hardware_id`\n- `allow-get_platform_info`\n- `allow-init_activation`\n- `allow-poll_activation`\n- `allow-whoami`\n- `allow-shared_token_get`\n- `allow-shared_token_set`\n- `allow-shared_token_remove`\n- `allow-get_grace_state`\n- `allow-open_activation_url`",
+          "description": "Allows the full getapps.cafe activation flow:\n- read hardware id / platform info\n- start an activation and poll for its completion\n- call /whoami with a bearer token\n- read/write/remove the shared device token in the OS keychain\n- read or initialize the grace-period state\n- open the activation URL in the user's default browser\n\n#### This default permission set includes:\n\n- `allow-get-hardware-id`\n- `allow-get-platform-info`\n- `allow-init-activation`\n- `allow-poll-activation`\n- `allow-whoami`\n- `allow-shared-token-get`\n- `allow-shared-token-set`\n- `allow-shared-token-remove`\n- `allow-get-grace-state`\n- `allow-open-activation-url`",
           "type": "string",
           "const": "default",
-          "markdownDescription": "Allows the full getapps.cafe activation flow:\n- read hardware id / platform info\n- start an activation and poll for its completion\n- call /whoami with a bearer token\n- read/write/remove the shared device token in the OS keychain\n- read or initialize the grace-period state\n- open the activation URL in the user's default browser\n\n#### This default permission set includes:\n\n- `allow-get_hardware_id`\n- `allow-get_platform_info`\n- `allow-init_activation`\n- `allow-poll_activation`\n- `allow-whoami`\n- `allow-shared_token_get`\n- `allow-shared_token_set`\n- `allow-shared_token_remove`\n- `allow-get_grace_state`\n- `allow-open_activation_url`"
+          "markdownDescription": "Allows the full getapps.cafe activation flow:\n- read hardware id / platform info\n- start an activation and poll for its completion\n- call /whoami with a bearer token\n- read/write/remove the shared device token in the OS keychain\n- read or initialize the grace-period state\n- open the activation URL in the user's default browser\n\n#### This default permission set includes:\n\n- `allow-get-hardware-id`\n- `allow-get-platform-info`\n- `allow-init-activation`\n- `allow-poll-activation`\n- `allow-whoami`\n- `allow-shared-token-get`\n- `allow-shared-token-set`\n- `allow-shared-token-remove`\n- `allow-get-grace-state`\n- `allow-open-activation-url`"
         }
       ]
     }

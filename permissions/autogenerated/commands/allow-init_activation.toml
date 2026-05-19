@@ -1,6 +1,0 @@
-"$schema" = "../../schemas/schema.json"
-
-[[permission]]
-identifier = "allow-init_activation"
-description = "Allows the init_activation command without prearguments."
-commands.allow = ["init_activation"]

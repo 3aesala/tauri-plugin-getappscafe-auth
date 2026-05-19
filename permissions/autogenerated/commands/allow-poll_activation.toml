@@ -1,6 +1,0 @@
-"$schema" = "../../schemas/schema.json"
-
-[[permission]]
-identifier = "allow-poll_activation"
-description = "Allows the poll_activation command without prearguments."
-commands.allow = ["poll_activation"]
