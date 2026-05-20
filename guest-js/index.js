@@ -43,7 +43,7 @@ const DEFAULT_OPTS = {
   // Hidden shortcut that opens a read-only info modal (user/device/plan/grace).
   // Pass a string like 'Mod+Shift+Alt+A' ('Mod' = Cmd on macOS, Ctrl elsewhere),
   // a custom (KeyboardEvent) => boolean matcher, or null to disable.
-  infoShortcut: 'Mod+Shift+Alt+A',
+  infoShortcut: 'Mod+Shift+J',
   // Floating sign-in button position (only used in `grace` phase). Number =
   // px, string = any CSS length (e.g. '1rem', '2vw', 'calc(20px + env(safe-area-inset-bottom))').
   right: 20,
