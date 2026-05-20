@@ -44,6 +44,10 @@ const DEFAULT_OPTS = {
   // Pass a string like 'Mod+Shift+Alt+A' ('Mod' = Cmd on macOS, Ctrl elsewhere),
   // a custom (KeyboardEvent) => boolean matcher, or null to disable.
   infoShortcut: 'Mod+Shift+Alt+A',
+  // Floating sign-in button position (only used in `grace` phase). Number =
+  // px, string = any CSS length (e.g. '1rem', '2vw', 'calc(20px + env(safe-area-inset-bottom))').
+  right: 20,
+  bottom: 20,
 };
 
 /**
@@ -77,6 +81,8 @@ class Auth {
       import('./ui.js').then(({ AuthUI }) => {
         this.ui = new AuthUI({
           apiUrl: opts.apiUrl,
+          fabRight: opts.right,
+          fabBottom: opts.bottom,
           onSignInClick: () => this.startActivation(),
           onCancelActivation: () => this.cancelActivation(),
           onUpgradeClick: () => this.openUpgradeUrl(),

@@ -144,6 +144,8 @@ After activating app A, install app B from the same publisher — it reads the s
 | `upgradeUrl` | derived | Where the "Upgrade" button opens. Defaults to `${apiUrl}/account#/billing`. |
 | `deviceName` | hostname or appName | Sent to the server on `init` so it shows up in `/account`. |
 | `infoShortcut` | `'Mod+Shift+Alt+A'` | Hidden shortcut that opens a read-only info modal (user / device / plan / grace). `'Mod'` is Cmd on macOS, Ctrl elsewhere. Set to `null` to disable, or pass a `(KeyboardEvent) => boolean` matcher. |
+| `right` | `20` | Floating sign-in button offset from the right edge. Number = px, string = any CSS length (e.g. `'1rem'`, `'calc(20px + env(safe-area-inset-right))'`). |
+| `bottom` | `20` | Floating sign-in button offset from the bottom edge. Same semantics as `right`. |
 
 ### `Auth` instance
 

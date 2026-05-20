@@ -69,6 +69,17 @@ export interface SetupOptions {
    * KeyboardEvent matcher.
    */
   infoShortcut?: string | ShortcutMatcher | null;
+  /**
+   * Floating sign-in button offset from the right edge of the viewport
+   * (used in the `grace` phase). Number = pixels, string = any CSS length
+   * (e.g. '1rem', 'calc(20px + env(safe-area-inset-right))'). Default 20.
+   */
+  right?: number | string;
+  /**
+   * Floating sign-in button offset from the bottom edge of the viewport.
+   * Same value semantics as `right`. Default 20.
+   */
+  bottom?: number | string;
 }
 
 export interface Auth {

@@ -70,7 +70,12 @@ export class AuthUI {
           ${USER_ICON_SVG}
         </button>
       `;
-      this.host.querySelector('.gac-fab').onclick = () => this.opts.onSignInClick();
+      const fab = this.host.querySelector('.gac-fab');
+      const right = cssLength(this.opts.fabRight);
+      const bottom = cssLength(this.opts.fabBottom);
+      if (right != null) fab.style.right = right;
+      if (bottom != null) fab.style.bottom = bottom;
+      fab.onclick = () => this.opts.onSignInClick();
       return;
     }
     if (phase === 'locked') {
@@ -259,6 +264,13 @@ function humanRemaining(ms) {
   if (days >= 1) return `${sign}${days}d ${hours}h`;
   if (hours >= 1) return `${sign}${hours}h ${mins}m`;
   return `${sign}${mins}m`;
+}
+
+function cssLength(v) {
+  if (v == null) return null;
+  if (typeof v === 'number') return `${v}px`;
+  if (typeof v === 'string' && v.trim()) return v;
+  return null;
 }
 
 function escapeHtml(s) {
