@@ -49,6 +49,8 @@ export interface AuthState {
   error?: string;
 }
 
+export type ShortcutMatcher = (event: KeyboardEvent) => boolean;
+
 export interface SetupOptions {
   apiUrl?: string;
   appName: string;
@@ -60,6 +62,13 @@ export interface SetupOptions {
   onChange?: (state: AuthState) => void;
   upgradeUrl?: string | null;
   deviceName?: string;
+  /**
+   * Hidden shortcut that opens a read-only info modal showing the current
+   * user / device / plan / grace state. Defaults to 'Mod+Shift+Alt+A'
+   * (Cmd on macOS, Ctrl elsewhere). Pass `null` to disable, or a custom
+   * KeyboardEvent matcher.
+   */
+  infoShortcut?: string | ShortcutMatcher | null;
 }
 
 export interface Auth {
@@ -69,6 +78,14 @@ export interface Auth {
   cancelActivation(): void;
   signOut(): Promise<void>;
   openUpgradeUrl(): void;
+  openAccountUrl(): void;
+  /** Force an immediate whoami / grace re-check (bypasses the periodic timer). */
+  refresh(): Promise<void>;
+  /** Open the hidden info modal. Also triggered by `infoShortcut`. */
+  showInfo(): Promise<void>;
+  hideInfo(): void;
+  toggleInfo(): Promise<void> | void;
+  copyHardwareId(): Promise<boolean>;
   destroy(): void;
 }
 
