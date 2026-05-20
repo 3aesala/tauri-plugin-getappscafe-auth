@@ -36,7 +36,7 @@ For shared keychain on macOS (so a 2nd app from the same publisher boots straigh
 ```xml
 <key>keychain-access-groups</key>
 <array>
-  <string>$(AppIdentifierPrefix)cafe.getapps.shared</string>
+  <string>VFYA7T675R.cafe.getapps.shared</string>
 </array>
 ```
 

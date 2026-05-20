@@ -117,10 +117,10 @@ The plugin stores the device token in the **OS-level shared credential store**:
    ```xml
    <key>keychain-access-groups</key>
    <array>
-     <string>$(AppIdentifierPrefix)cafe.getapps.shared</string>
+     <string>VFYA7T675R.cafe.getapps.shared</string>
    </array>
    ```
-   At code-sign time `$(AppIdentifierPrefix)` expands to `VFYA7T675R.`, giving the full group `VFYA7T675R.cafe.getapps.shared` that the plugin writes to.
+   The Team ID prefix is hardcoded so the entitlement matches the `ACCESS_GROUP` the plugin writes to (`VFYA7T675R.cafe.getapps.shared`). Do not use `$(AppIdentifierPrefix)` here — apps not signed with Team ID `VFYA7T675R` cannot join this group anyway.
 3. Unsigned / ad-hoc-signed builds (the default `cargo tauri dev` output) **cannot** join an access group. You'll see the OS password dialog when a second app tries to read app 1's token. This is expected in development; once both apps ship signed with the same Team ID + entitlement, the dialog goes away.
 
 After activating app A, install app B from the same publisher — it reads the same token, calls `/whoami`, and boots straight into the authenticated state. No browser, no second activation, no extra license slot used (the server unique-keys on `hardware_id`).
