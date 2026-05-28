@@ -128,8 +128,6 @@ The plugin stores the device token in the **OS-level shared credential store**:
 
 After activating app A, install app B from the same publisher — it reads the same token, calls `/whoami`, and boots straight into the authenticated state. No browser, no second activation, no extra license slot used (the server unique-keys on `hardware_id`).
 
-> **Upgrading from earlier plugin versions**: the macOS backend was switched from the legacy file keychain to DataProtectionKeychain with a shared access group. Existing tokens are not migrated — users will re-activate once on next launch.
-
 ## API
 
 ### `setupAuth(opts) -> Auth`
@@ -168,9 +166,9 @@ await auth.copyHardwareId();    // copy hardware id to clipboard
 auth.destroy();                 // unmount UI, clear timers
 ```
 
-### Hidden info shortcut
+### Open account info modal
 
-Press **Cmd/Ctrl + Shift + Alt + A** to open a read-only modal with the current user, device, plan, grace window, and stored token (masked). The modal also exposes "Re-check now", "Copy hardware ID", "Open account page", and "Sign out" — useful for support, QA, or letting power users check their state without leaving the app.
+Press **Cmd/Ctrl + Shift + J** to open a read-only modal with the current user, device, plan, grace window, and stored token (masked). The modal also exposes "Re-check now", "Copy hardware ID", "Open account page", and "Sign out" — useful for support, QA, or letting power users check their state without leaving the app.
 
 The shortcut works in every phase (including `authenticated` when no other UI is visible). Disable with `infoShortcut: null`, or override with `infoShortcut: 'Mod+Shift+F12'` / a custom matcher function.
 
@@ -208,7 +206,3 @@ The injected stylesheet exposes CSS variables on `.gac-host`:
 ```
 
 Override them in your app's stylesheet to match brand colors.
-
-## License
-
-MIT
